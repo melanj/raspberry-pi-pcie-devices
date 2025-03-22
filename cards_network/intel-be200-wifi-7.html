@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <script async="" src="//analytics.midwesternmac.com/tracker.js" id="fathom-script"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Intel BE200 WiFi 7 802.11be M.2 non vPro | Raspberry Pi PCIe Database</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Intel BE200 WiFi 7 802.11be M.2 non vPro" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Since early 2025, Raspberry Pi OS includes the Intel iwlwifi driver, so all you need to do to enable this card is install the appropriate firmware." />
+<meta property="og:description" content="Since early 2025, Raspberry Pi OS includes the Intel iwlwifi driver, so all you need to do to enable this card is install the appropriate firmware." />
+<link rel="canonical" href="https://pipci.jeffgeerling.com//cards_network/intel-be200-wifi-7.html" />
+<meta property="og:url" content="https://pipci.jeffgeerling.com//cards_network/intel-be200-wifi-7.html" />
+<meta property="og:site_name" content="Raspberry Pi PCIe Database" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-22T02:15:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Intel BE200 WiFi 7 802.11be M.2 non vPro" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-22T02:15:05+00:00","datePublished":"2025-03-22T02:15:05+00:00","description":"Since early 2025, Raspberry Pi OS includes the Intel iwlwifi driver, so all you need to do to enable this card is install the appropriate firmware.","headline":"Intel BE200 WiFi 7 802.11be M.2 non vPro","mainEntityOfPage":{"@type":"WebPage","@id":"https://pipci.jeffgeerling.com//cards_network/intel-be200-wifi-7.html"},"url":"https://pipci.jeffgeerling.com//cards_network/intel-be200-wifi-7.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="sponsor_banner" href="https://github.com/sponsors/geerlingguy">Sponsor <i class="fa-solid fa-heart"></i></a>
+          <a id="forkme_banner" href="https://github.com/geerlingguy/raspberry-pi-pcie-devices">View on GitHub <i class="fa-brands fa-github"></i></a>
+
+          <h2 id="project_title"><a href="/">Raspberry Pi PCIe Database</a></h2>
+          <h2 id="project_tagline">Raspberry Pi PCI Express device compatibility database</h2>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <h1 id="card_title">Intel BE200 WiFi 7 802.11be M.2 non vPro</h1>
+
+        <div class="card_picture">
+          
+            <a href="/images/network-intel-be200-wi-fi-7.jpg"><img src="/images/network-intel-be200-wi-fi-7.jpg" alt="Intel BE200 WiFi 7 802.11be M.2 non vPro"></a>
+          
+        </div>
+
+        <table class="card_details_table">
+          <thead>
+            <tr>
+              <th>CM4 Functionality</th>
+              <th>Pi 5 Functionality</th>
+              <th>Driver Required?</th>
+              <th>More Info</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full</td>
+              <td>Full</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues/670">GitHub Issue</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card_videos">
+          <h3>Videos Related to this Card</h2>
+            
+              <ul>
+                
+                  <li><a href="https://www.youtube.com/watch?v=1oXrJ4wQ2dQ">The fastest WiFi EVER on a Raspberry Pi</a></a></li>
+                
+              </ul>
+            
+        </div>
+
+        <div class="card_content">
+          <h3>Description and Notes</h3>
+          <p>Since early 2025, Raspberry Pi OS includes the Intel <code class="language-plaintext highlighter-rouge">iwlwifi</code> driver, so all you need to do to enable this card is install the appropriate firmware.</p>
+
+<p>The firmware version will change over time as Pi OS is updated to newer kernels, but as of March 2025, running kernel 6.6.y, the instructions for installing the appropriate firmware are as follows:</p>
+
+<p>First, check the <code class="language-plaintext highlighter-rouge">dmesg</code> logs to see which firmware files are being loaded (and failing):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmesg | grep iwlwifi
+</code></pre></div></div>
+
+<p>Then, in the <a href="https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/">linux-firmware</a> repository, search for that driver version.</p>
+
+<p>Download both the <code class="language-plaintext highlighter-rouge">ucode</code> and <code class="language-plaintext highlighter-rouge">pnvm</code> files for the firmware version that’s missing, and make sure they end up in the <code class="language-plaintext highlighter-rouge">/lib/firmware</code> directory, for example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /lib/firmware
+sudo wget -o - -q https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/iwlwifi-gl-c0-fm-c0-83.ucode
+sudo wget -o - -q https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/iwlwifi-gl-c0-fm-c0.pnvm
+</code></pre></div></div>
+
+<p>To physically connect the card to a Pi 5, you will need an M.2 A+E key to PCI Express card adapter, like <a href="https://amzn.to/3XpXOpg">Waveshare’s PCIe to M.2 E-key HAT+</a>. The Waveshare HAT includes adapters from the MHF4 to u.FL antenna connectors, and you can then use any standard SMA screw-on antenna with the HAT. Otherwise, you have to figure out how to get MHF4 to some form of antenna.</p>
+
+<p>At this point, I’ve only tried this as Wi-Fi 7 client - not as an AP. Others on GitHub have successfully used it in AP mode, but I’m not sure if that works across all bands or just some.</p>
+
+<h2 id="bluetooth-support">Bluetooth Support</h2>
+
+<p>Bluetooth support requires a USB connection—not all M.2 adapter HATs supply this (though the Waveshare mentioned above does).</p>
+
+<p>With that, you will need to download the appropriate Bluetooth firmware for the WiFi card into <code class="language-plaintext highlighter-rouge">/lib/firmware/intel</code>. Search <code class="language-plaintext highlighter-rouge">dmesg | grep Bluetooth</code> and see if there are messages about missing firmware. Then go find that missing firmware in the <a href="https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/intel/">linux-firmware repository’s <code class="language-plaintext highlighter-rouge">intel</code> section</a> and download it, for example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /lib/firmware/intel
+sudo wget -o - -q https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/intel/ibt-0291-0291.ddc
+sudo wget -o - -q https://web.git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/intel/ibt-0291-0291.sfi
+</code></pre></div></div>
+
+<p>Check for Bluetooth functionality:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Shows active Bluetooth adapters
+sudo hciconfig
+
+# Disable built-in bluetooth and enable Intel Bluetooth
+sudo hciconfig hci1 down
+sudo hciconfig hci0 up
+
+# If RF-kill blocks enabling the device, check why:
+rfkill list all
+
+# Then unblock it if it's blocked:
+sudo rfkill unblock bluetooth
+
+# Check for Bluetooth devices:
+bluetoothctl scan on
+</code></pre></div></div>
+
+        </div>
+
+        <div class="card_buy_link">
+          <h3>Buy this Card</h3>
+          <p>If you'd like to purchase this card, it helps me out if you use the following product link:<br>
+          <a href="https://amzn.to/3B02v0r">Intel BE200 WiFi 7 802.11be M.2 non vPro</a></p>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">The Raspberry Pi PCIe Database project is maintained by <a href="https://github.com/geerlingguy">geerlingguy</a></p>
+      </footer>
+    </div>
+
+    
+      <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+      <script>
+      (function(f, a, t, h, o, m){
+        a[h]=a[h]||function(){
+          (a[h].q=a[h].q||[]).push(arguments)
+        };
+        o=f.createElement('script'),
+        m=f.getElementsByTagName('script')[0];
+        o.async=1; o.src=t; o.id='fathom-script';
+        m.parentNode.insertBefore(o,m)
+      })(document, window, '//analytics.midwesternmac.com/tracker.js', 'fathom');
+      fathom('set', 'siteId', 'JVIIB');
+      fathom('trackPageview');
+      </script>
+      <!-- / Fathom -->
+    
+  </body>
+</html>

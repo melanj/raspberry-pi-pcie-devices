@@ -344,7 +344,7 @@ pre, code {
   color: #222;
   background-color: #fff;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 14px;
+  font-size: 0.875em;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
@@ -417,6 +417,19 @@ td {
 form {
   background: #f2f2f2;
   padding: 20px; }
+
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 3px 5px;
+  vertical-align: middle; }
 
 /*******************************************************************************
 Full-Width Styles
@@ -590,6 +603,10 @@ Small Device Styles
     min-width: 240px;
     max-width: 320px;
     font-size: 11px; } }
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: 0; }
+
 #header_wrap .inner {
   padding: 40px 10px 10px; }
 
@@ -602,13 +619,27 @@ Small Device Styles
   top: 0;
   right: 200px;
   z-index: 12;
-  padding: 10px 40px 10px 10px;
+  padding: 10px 20px;
   color: #fff;
-  background: url("/images/heart.png") #db61a2 no-repeat 90% 50%;
+  background-color: #db61a2;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px; }
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
+
+#forkme_banner {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 10;
+  padding: 10px 20px;
+  color: #fff;
+  background: #0090ff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
 
 #project_title {
   background: none;
@@ -617,43 +648,56 @@ Small Device Styles
     color: inherit; }
 
 #project_tagline {
-  font-size: 18px; }
+  font-size: 18px;
+  margin-top: 0; }
+
+#main_content p:first-of-type {
+  margin-top: 0; }
 
 .card_table,
-.board_table {
+.board_table,
+.hat_table {
   width: 100%; }
   .card_table td,
-  .board_table td {
+  .board_table td,
+  .hat_table td {
     vertical-align: top; }
   .card_table .links,
-  .board_table .links {
+  .board_table .links,
+  .hat_table .links {
     margin-top: 1em;
     font-size: .8em; }
 
 .card_table_picture,
-.board_table_picture {
+.board_table_picture,
+.hat_table_picture {
   max-width: 100px;
   max-height: 100px;
   margin: 0; }
 
 .card_picture_td,
-.board_picture_td {
+.board_picture_td,
+.hat_picture_td {
   width: 100px; }
 
 #card_title,
-#board_title {
+#board_title,
+#hat_title {
   font-size: 24px; }
 
 .card_picture,
-.board_picture {
+.board_picture,
+.hat_picture {
   text-align: center;
   width: 100%; }
   .card_picture img,
-  .board_picture img {
+  .board_picture img,
+  .hat_picture img {
     max-width: 500px; }
 
 .card_details_table,
-.board_details_table {
+.board_details_table,
+.hat_details_table {
   margin: 0 auto; }
 
 @media screen and (max-width: 800px) {
@@ -661,5 +705,6 @@ Small Device Styles
     height: auto; }
 
   .card_picture img,
-  .board_picture img {
+  .board_picture img,
+  .hat_picture img {
     max-width: 100%; } }
